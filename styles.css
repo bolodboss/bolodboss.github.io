@@ -1,44 +1,66 @@
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #fafafa;
+@font-face {
+    font-family: 'Billabong';
+    src: url('assets/fonts/Billabong.ttf') format('truetype');
+}
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #fafafa;
+    color: #262626;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    flex-grow: 1;
+    padding: 32px 0;
 }
 
-.login-container {
+.phone {
+    margin-right: 32px;
+}
+
+.phone img {
+    height: 600px;
+}
+
+.login-section {
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 350px;
 }
 
 .login-box {
-    background-color: white;
+    background: white;
     border: 1px solid #dbdbdb;
     padding: 20px 40px;
     margin-bottom: 10px;
     text-align: center;
-    width: 100%;
 }
 
-h1 {
-    font-family: 'Billabong', cursive;
-    font-size: 48px;
-    margin: 22px 0;
+.logo {
+    width: 175px;
+    margin: 22px auto;
 }
 
 .input-group {
     margin-bottom: 6px;
 }
 
-input {
+.input-group input {
     width: 100%;
     padding: 9px 8px;
-    background-color: #fafafa;
+    background: #fafafa;
     border: 1px solid #dbdbdb;
     border-radius: 3px;
     font-size: 12px;
@@ -46,12 +68,12 @@ input {
 
 .login-btn {
     width: 100%;
-    background-color: #0095f6;
+    background: #0095f6;
     color: white;
     border: none;
     border-radius: 4px;
-    padding: 5px 9px;
-    font-weight: 500;
+    padding: 8px;
+    font-weight: 600;
     margin-top: 8px;
     cursor: pointer;
 }
@@ -62,34 +84,36 @@ input {
     margin: 10px 0;
     color: #8e8e8e;
     font-size: 13px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
-.divider::before, .divider::after {
+.divider::before,
+.divider::after {
     content: "";
     flex: 1;
     border-bottom: 1px solid #dbdbdb;
     margin: 0 10px;
 }
 
-.facebook-login {
+.fb-login {
     display: flex;
     align-items: center;
     justify-content: center;
     background: none;
     border: none;
     color: #385185;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 14px;
     cursor: pointer;
     margin: 8px 0;
 }
 
-.facebook-login img {
+.fb-login img {
     width: 16px;
     margin-right: 8px;
 }
 
-.forgot-password {
+.forgot-pw {
     color: #00376b;
     font-size: 12px;
     text-decoration: none;
@@ -98,11 +122,11 @@ input {
 }
 
 .signup-box {
-    background-color: white;
+    background: white;
     border: 1px solid #dbdbdb;
     padding: 20px;
     text-align: center;
-    width: 100%;
+    margin-bottom: 20px;
 }
 
 .signup-box p {
@@ -113,13 +137,31 @@ input {
 .signup-box a {
     color: #0095f6;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
 }
 
-.footer {
-    width: 100%;
+.get-app {
     text-align: center;
-    margin-top: 20px;
+}
+
+.get-app p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.app-stores {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.app-stores img {
+    height: 40px;
+}
+
+footer {
+    padding: 20px 0;
+    text-align: center;
 }
 
 .links {
@@ -132,22 +174,44 @@ input {
 .links a {
     color: #8e8e8e;
     font-size: 12px;
-    margin: 0 8px 8px 0;
+    margin: 0 8px 12px;
     text-decoration: none;
 }
 
-.language {
-    margin-bottom: 16px;
+.copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #8e8e8e;
+    font-size: 12px;
 }
 
-.language select {
+.copyright select {
     color: #8e8e8e;
     border: none;
     background: none;
+    margin-right: 10px;
     font-size: 12px;
 }
 
-.copyright {
-    color: #8e8e8e;
-    font-size: 12px;
+/* Responsive */
+@media (max-width: 875px) {
+    .phone {
+        display: none;
+    }
+}
+
+@media (max-width: 450px) {
+    .container {
+        padding: 0;
+    }
+    
+    .login-section {
+        width: 100%;
+    }
+    
+    .login-box, .signup-box {
+        background: none;
+        border: none;
+    }
 }
