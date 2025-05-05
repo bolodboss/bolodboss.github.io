@@ -1,21 +1,24 @@
 document.getElementById('loginForm').addEventListener('submit', function(e) {
     e.preventDefault();
     
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
+    const username = this.querySelector('input[type="text"]').value;
+    const password = this.querySelector('input[type="password"]').value;
     
-    // Here you would typically send this data to a server
+    // Simple validation
+    if(username.trim() === '' || password.trim() === '') {
+        alert('Please fill in all fields');
+        return;
+    }
+    
     console.log('Login attempt:', { username, password });
-    
-    // For demo purposes, just show an alert
-    alert('Login functionality would be implemented here. Check console for details.');
+    alert('Login functionality would connect to server in real app');
 });
 
-// Load configuration
+// Load config
 fetch('config.json')
     .then(response => response.json())
     .then(config => {
-        console.log('App config loaded:', config);
+        console.log('App config:', config);
     })
     .catch(error => {
         console.error('Error loading config:', error);
