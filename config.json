@@ -1,0 +1,10 @@
+{
+    "appName": "Instagram Clone",
+    "version": "1.0",
+    "apiBaseUrl": "https://api.example.com",
+    "features": {
+        "facebookLogin": true,
+        "passwordReset": true,
+        "signup": true
+    }
+}
